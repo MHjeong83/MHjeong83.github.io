@@ -72,12 +72,14 @@ public class SpeedBaker : Baker<SpeedAuthoring>
 
 ## 기본 사용법
 
-![img_001](https://github.com/MHjeong83/mhjeong83.github.io/blob/master/assets/img/posts/2022-12-14-Unity%20DOTS/img_001.png)
+<img width="1605" alt="img_001" src="https://user-images.githubusercontent.com/87407088/207586381-22584ea6-8a39-4e10-806b-5f6a37717d4a.png">
+
 
 - 서브씬에 게임 오브젝트를 생성한 뒤 `SpeedAuthoring.cs` 를 컴포넌트에 추가한다
 - 이렇게 보면 기존과 별다르지 않지만, `Inspector` 창 우측 상단에 자물쇠 아이콘 외쪽에 동그라미 버튼이 있을것이다. `클릭 → Runtime` 으로 변경하면 `Inspector` 창이 변경되는걸 볼 수 있습니다.
 
-![img_002.png](..%2Fassets%2Fimg%2Fposts%2F2022-12-14-Unity%20DOTS%2Fimg_002.png)
+<img width="1605" alt="img_002" src="https://user-images.githubusercontent.com/87407088/207586453-1fa7f867-4d75-4a12-97ef-fe2bfeb89676.png">
+
 
 ## SystemBase
 
@@ -107,7 +109,7 @@ public partial class MovingSystemBase : SystemBase
 
 - Windows - Entities - Systems - 확인 가능
 
-![img_003.png](..%2Fassets%2Fimg%2Fposts%2F2022-12-14-Unity%20DOTS%2Fimg_003.png)
+<img width="728" alt="img_003" src="https://user-images.githubusercontent.com/87407088/207586511-eaa6af89-1d3c-4f01-a3c4-8c99a63b06d9.png">
 
 ## ISystem
 
@@ -177,7 +179,7 @@ public partial class MovingSystemBase : SystemBase
 }
 ```
 
-![img_004.png](..%2Fassets%2Fimg%2Fposts%2F2022-12-14-Unity%20DOTS%2Fimg_004.png)
+<img width="1605" alt="img_004" src="https://user-images.githubusercontent.com/87407088/207586581-3271ff7b-1194-48fa-9546-880cef221925.png">
 
 - 해당 컴포넌트를 추가 한뒤 값을 설정해주고 실행을 해보면 설정한 스피드로 목적지까지 가는걸 확인합니다.
 
@@ -278,7 +280,8 @@ public class RandomBaker : Baker<RandomAuthoring>
 }
 ```
 
-![img_005.png](..%2Fassets%2Fimg%2Fposts%2F2022-12-14-Unity%20DOTS%2Fimg_005.png)
+<img width="1605" alt="img_005" src="https://user-images.githubusercontent.com/87407088/207586638-7d57f3e0-128b-4201-bb0a-1eb3a4489474.png">
+
 
 - 위처럼 구성한 뒤 실행 해보면 랜덤하게 이동하는걸 확인 할 수 있다.
 
@@ -417,9 +420,10 @@ public partial class MovingSystemBase : SystemBase
 
 - 프로파일링 해봅시다~!
 
-    ![img_006.png](..%2Fassets%2Fimg%2Fposts%2F2022-12-14-Unity%20DOTS%2Fimg_006.png)
+<img width="1760" alt="img_006" src="https://user-images.githubusercontent.com/87407088/207586683-a99212b2-759a-4e64-bc26-76662b61d170.png">
 
-    ![img_007.png](..%2Fassets%2Fimg%2Fposts%2F2022-12-14-Unity%20DOTS%2Fimg_007.png)
+<img width="1760" alt="img_007" src="https://user-images.githubusercontent.com/87407088/207586719-3817396a-4d8d-4782-bc99-602979be4523.png">
+
 -
 - 확인완료!
 
@@ -520,15 +524,18 @@ public class PlayerTagBaker : Baker<PlayerTagAuthoring>
 }
 ```
 
-![img_008.png](..%2Fassets%2Fimg%2Fposts%2F2022-12-14-Unity%20DOTS%2Fimg_008.png)
+<img width="2168" alt="img_008" src="https://user-images.githubusercontent.com/87407088/207586758-4ac8f69f-ba54-49d3-b5d4-aea84819611f.png">
 
-![img_009.png](..%2Fassets%2Fimg%2Fposts%2F2022-12-14-Unity%20DOTS%2Fimg_009.png)
+
+<img width="2168" alt="img_009" src="https://user-images.githubusercontent.com/87407088/207586764-6b6a64b6-96c2-494b-b363-fb8868407478.png">
+
 
 음,,, 뭔가 기대 이상은 아닌것같은데,,,,
 
 무빙에 관련하는 부분이 2곳이 있는것 같은데  `Moving System Base` 를 꺼보자
 
-![img_010.png](..%2Fassets%2Fimg%2Fposts%2F2022-12-14-Unity%20DOTS%2Fimg_010.png)
+<img width="2168" alt="img_010" src="https://user-images.githubusercontent.com/87407088/207586815-d964044d-540b-4f66-b997-66fd370d3205.png">
+
 
 오,,,? 이제서야 뭔가 원하는 프레임이 나온듯하다
 
