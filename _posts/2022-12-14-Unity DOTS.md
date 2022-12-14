@@ -72,7 +72,7 @@ public class SpeedBaker : Baker<SpeedAuthoring>
 
 ## 기본 사용법
 
-![img_001.png](..%2Fassets%2Fimg%2Fposts%2F2022-12-14-Unity%20DOTS%2Fimg_001.png)
+<img src='assets/img/posts/2022-12-14-Unity DOTS/img_001.png'>
 
 - 서브씬에 게임 오브젝트를 생성한 뒤 `SpeedAuthoring.cs` 를 컴포넌트에 추가한다
 - 이렇게 보면 기존과 별다르지 않지만, `Inspector` 창 우측 상단에 자물쇠 아이콘 외쪽에 동그라미 버튼이 있을것이다. `클릭 → Runtime` 으로 변경하면 `Inspector` 창이 변경되는걸 볼 수 있습니다.
