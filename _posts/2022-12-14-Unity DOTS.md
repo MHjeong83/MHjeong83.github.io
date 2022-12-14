@@ -16,14 +16,14 @@ categories: [Unity, DOTS]
 - PackageManager 설치
     - com.unity.entities (1.0.0-exp.12)
     - [com.unity.entities.graphics](http://com.unity.entities.graphics) (1.00-exp.14)
-    
+
 - Project Settings 설정
     - Editor → Enter Play Mode Settings → Enter Play Mode Opertion, Disable Scene Backup 체크
     - Player → Other Settings → Configuration
     - Scripting Backend → IL2CPP
     - Api Compatibility Level → .Net FrameWork 설정
     - Scripting Define Symbol → ENABLE_TRANSFORM_V1 추가
-    
+
 
 # 서브씬 생성
 
@@ -72,12 +72,12 @@ public class SpeedBaker : Baker<SpeedAuthoring>
 
 ## 기본 사용법
 
-![스크린샷 2022-12-12 오후 6.57.19.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/cb999eeb-34da-4cdb-8945-f11e544506e2/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-12-12_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_6.57.19.png)
+![img_001.png](..%2Fassets%2Fimg%2Fposts%2F2022-12-14-Unity%20DOTS%2Fimg_001.png)
 
 - 서브씬에 게임 오브젝트를 생성한 뒤 `SpeedAuthoring.cs` 를 컴포넌트에 추가한다
 - 이렇게 보면 기존과 별다르지 않지만, `Inspector` 창 우측 상단에 자물쇠 아이콘 외쪽에 동그라미 버튼이 있을것이다. `클릭 → Runtime` 으로 변경하면 `Inspector` 창이 변경되는걸 볼 수 있습니다.
 
-![스크린샷 2022-12-12 오후 7.00.25.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/5fbb6389-e490-4b9c-a470-7437c92b24d0/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-12-12_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_7.00.25.png)
+![img_002.png](..%2Fassets%2Fimg%2Fposts%2F2022-12-14-Unity%20DOTS%2Fimg_002.png)
 
 ## SystemBase
 
@@ -107,7 +107,7 @@ public partial class MovingSystemBase : SystemBase
 
 - Windows - Entities - Systems - 확인 가능
 
-![스크린샷 2022-12-12 오후 7.18.43.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/bfab78fb-a074-431f-94d8-4bee69f7f9dc/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-12-12_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_7.18.43.png)
+![img_003.png](..%2Fassets%2Fimg%2Fposts%2F2022-12-14-Unity%20DOTS%2Fimg_003.png)
 
 ## ISystem
 
@@ -177,7 +177,7 @@ public partial class MovingSystemBase : SystemBase
 }
 ```
 
-![스크린샷 2022-12-12 오후 7.33.54.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/56e1fdc8-baa5-44fb-a40e-17d66ed4d6cc/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-12-12_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_7.33.54.png)
+![img_004.png](..%2Fassets%2Fimg%2Fposts%2F2022-12-14-Unity%20DOTS%2Fimg_004.png)
 
 - 해당 컴포넌트를 추가 한뒤 값을 설정해주고 실행을 해보면 설정한 스피드로 목적지까지 가는걸 확인합니다.
 
@@ -195,7 +195,7 @@ public partial class MovingSystemBase : SystemBase
     protected override void OnUpdate()
     {
         RefRW<RandomComponent> randomComponent = SystemAPI.GetSingletonRW<RandomComponent>();
-        
+
         foreach (MoveToPositionAspect moveToPositionAspect in SystemAPI.Query<MoveToPositionAspect>())
         {
             moveToPositionAspect.Move(SystemAPI.Time.DeltaTime, randomComponent);
@@ -214,7 +214,7 @@ using Unity.Transforms;
 public readonly partial struct MoveToPositionAspect : IAspect
 {
     private readonly Entity _entity;
-    
+
     private readonly TransformAspect _transformAspect;
     private readonly RefRO<Speed> _speed;
     private readonly RefRW<TargetPosition> _targetPosition;
@@ -278,7 +278,7 @@ public class RandomBaker : Baker<RandomAuthoring>
 }
 ```
 
-![스크린샷 2022-12-13 오후 1.25.41.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6a809ac9-4e05-45b8-87fc-5c93be04d0d9/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-12-13_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_1.25.41.png)
+![img_005.png](..%2Fassets%2Fimg%2Fposts%2F2022-12-14-Unity%20DOTS%2Fimg_005.png)
 
 - 위처럼 구성한 뒤 실행 해보면 랜덤하게 이동하는걸 확인 할 수 있다.
 
@@ -298,13 +298,13 @@ public partial struct MovingISystem : ISystem
     [BurstCompile]
     public void OnCreate(ref SystemState state)
     {
-        
+
     }
 
     [BurstCompile]
     public void OnDestroy(ref SystemState state)
     {
-        
+
     }
 
     [BurstCompile]
@@ -313,14 +313,14 @@ public partial struct MovingISystem : ISystem
         RefRW<RandomComponent> randomComponent = SystemAPI.GetSingletonRW<RandomComponent>();
 
         float deltaTime = SystemAPI.Time.DeltaTime;
-        
+
         JobHandle jobHandle = new MoveJob
         {
             DeltaTime = deltaTime
         }.ScheduleParallel(state.Dependency);
-        
+
         jobHandle.Complete();
-        
+
         new TestReachedTargetPositionJob
         {
             RandomComponent = randomComponent
@@ -332,7 +332,7 @@ public partial struct MovingISystem : ISystem
 public partial struct MoveJob : IJobEntity
 {
     public float DeltaTime;
-    
+
     public void Execute(MoveToPositionAspect moveToPositionAspect)
     {
         moveToPositionAspect.Move(DeltaTime);
@@ -361,7 +361,7 @@ using Unity.Transforms;
 public readonly partial struct MoveToPositionAspect : IAspect
 {
     private readonly Entity _entity;
-    
+
     private readonly TransformAspect _transformAspect;
     private readonly RefRO<Speed> _speed;
     private readonly RefRW<TargetPosition> _targetPosition;
@@ -405,7 +405,7 @@ public partial class MovingSystemBase : SystemBase
     protected override void OnUpdate()
     {
         RefRW<RandomComponent> randomComponent = SystemAPI.GetSingletonRW<RandomComponent>();
-        
+
         foreach (MoveToPositionAspect moveToPositionAspect in SystemAPI.Query<MoveToPositionAspect>())
         {
             moveToPositionAspect.Move(SystemAPI.Time.DeltaTime);
@@ -416,11 +416,11 @@ public partial class MovingSystemBase : SystemBase
 ```
 
 - 프로파일링 해봅시다~!
-    
-    ![스크린샷 2022-12-13 오후 1.46.53.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/96766fca-7f85-440d-84b2-b3d0523af44d/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-12-13_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_1.46.53.png)
-    
-    ![스크린샷 2022-12-13 오후 1.47.03.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/233fe837-5c54-4cb4-9760-b0f21294e7a2/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-12-13_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_1.47.03.png)
-    
+
+    ![img_006.png](..%2Fassets%2Fimg%2Fposts%2F2022-12-14-Unity%20DOTS%2Fimg_006.png)
+
+    ![img_007.png](..%2Fassets%2Fimg%2Fposts%2F2022-12-14-Unity%20DOTS%2Fimg_007.png)
+-
 - 확인완료!
 
 ## 스트레스 테스트를 진행해보자!
@@ -508,7 +508,7 @@ using UnityEngine;
 
 public class PlayerTagAuthoring : MonoBehaviour
 {
-    
+
 }
 
 public class PlayerTagBaker : Baker<PlayerTagAuthoring>
@@ -520,15 +520,15 @@ public class PlayerTagBaker : Baker<PlayerTagAuthoring>
 }
 ```
 
-![스크린샷 2022-12-13 오후 4.20.53.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f3c0e7e6-42b1-4d30-bc06-030f4d187579/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-12-13_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_4.20.53.png)
+![img_008.png](..%2Fassets%2Fimg%2Fposts%2F2022-12-14-Unity%20DOTS%2Fimg_008.png)
 
-![스크린샷 2022-12-13 오후 4.21.15.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6978b23e-53ee-492a-9a8d-118d231bb2ba/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-12-13_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_4.21.15.png)
+![img_009.png](..%2Fassets%2Fimg%2Fposts%2F2022-12-14-Unity%20DOTS%2Fimg_009.png)
 
 음,,, 뭔가 기대 이상은 아닌것같은데,,,,
 
 무빙에 관련하는 부분이 2곳이 있는것 같은데  `Moving System Base` 를 꺼보자
 
-![스크린샷 2022-12-13 오후 4.32.36.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/db27f8b1-2964-478d-97d6-3ebbd481e39a/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-12-13_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_4.32.36.png)
+![img_010.png](..%2Fassets%2Fimg%2Fposts%2F2022-12-14-Unity%20DOTS%2Fimg_010.png)
 
 오,,,? 이제서야 뭔가 원하는 프레임이 나온듯하다
 
