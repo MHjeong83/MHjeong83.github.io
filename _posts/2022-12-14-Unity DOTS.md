@@ -24,25 +24,6 @@ categories: [Unity, DOTS]
     - Api Compatibility Level → .Net FrameWork 설정
     - Scripting Define Symbol → ENABLE_TRANSFORM_V1 추가
     
-    ```csharp
-    // 예시
-    #if !ENABLE_TRANSFORM_V1
-    #else
-    
-    namespace Unity.Transforms
-    {
-    	[Serializble]
-    	[WriteGroup(typeof(LocalToWorld))]
-    	[WriteGroup(typeof(LocalToParent))]
-    	public struct Translation : IComponentData
-    	{
-    		public float3 Value;
-    	}
-    }
-    
-    #endif
-    ```
-    
 
 # 서브씬 생성
 
